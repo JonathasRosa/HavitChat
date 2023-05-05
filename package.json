@@ -1,0 +1,23 @@
+{
+  "name": "havitchat",
+  "version": "1.0.0",
+  "description": "Chat utilizando Socket",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JonathasRosa/HavitChat.git"
+  },
+  "author": "Jonathas Rosa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JonathasRosa/HavitChat/issues"
+  },
+  "homepage": "https://github.com/JonathasRosa/HavitChat#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "socket.io": "^4.6.1"
+  }
+}
