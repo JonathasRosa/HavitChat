@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Havit-Chat</title>
+</head>
+<body>
+    <h1>Havit-Chat</h1>
+    <div>
+
+    </div><br>
+    <input type="text" name="" id="msg">
+    <input type="text" name="" id="username" placeholder="Seu nome de usuário">
+    <button onclick="enviar()">Enviar</button>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.6.1/socket.io.js"></script>
+<script>
+    var socket = io("http://localhost:3000");
+    socket.on("disconnect",()=>{
+        console.log("Desconectado")
+    });
+    function enviar(){
+        var msgField = document.getElementById("msg");
+        var usernameField = document.getElementById("username");
+        var msg = msgField.value;
+        var usernameField = usernameField.value;
+        socket.emit("msg",{ msg: msg, username: username });
+    }
+</script>
+</html>
