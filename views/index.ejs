@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Havit-Chat</title>
 </head>
 <body>
     <h1>Havit-Chat</h1>
-    <div>
+    <div id="chat">
 
     </div><br>
     <input type="text" name="" id="msg">
@@ -17,6 +18,9 @@
     <button onclick="enviar()">Enviar</button>
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.6.1/socket.io.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+    crossorigin="anonymous"></script>
 <script>
     var socket = io("http://localhost:3001");
 
@@ -25,7 +29,11 @@
     });
 
     socket.on("showmsg",(data)=>{
-        console.log(data)
+        console.log(data);
+        var chat = document.getElementById("chat");
+        var p = document.createElement("p");
+        p.innerHTML = data.username + ":" + data.msg;
+        chat.append(p);
     });
 
     function enviar(){
