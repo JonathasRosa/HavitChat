@@ -9,7 +9,7 @@ io.on("connection", (socket) => {
     })
 
     socket.on("msg", (data) => {
-        socket.emit("ShowMsh", data);
+        socket.emit("showmsg", data);
         console.log(data);
     })
 });
